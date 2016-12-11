@@ -5,5 +5,6 @@ create TABLE airdrone.User(
               email VARCHAR(100) PRIMARY KEY NOT NULL,
               password VARCHAR(100) NOT NULL,
               username VARCHAR(100),
-              rating INT DEFAULT 0
+              countGames INT DEFAULT 0,
+              winGames INT DEFAULT 0
             );

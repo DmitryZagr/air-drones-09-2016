@@ -57,7 +57,7 @@ public class UserControllerTest {
         ).andExpect(status().isOk())
                 .andExpect(jsonPath("$.response.email").value("test@mail.ru"))
                 .andExpect(jsonPath("$.response.username").value("Anonymus"))
-                .andExpect(jsonPath("$.response.rating").value(0));
+                .andExpect(jsonPath("$.response.winGames").value(0));
 
     }
 
@@ -119,8 +119,7 @@ public class UserControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.response.email").value("test@mail.ru"))
                 .andExpect(jsonPath("$.response.username").value("NEWUSER"))
-                .andExpect(jsonPath("$.response.rating").value(0));
+                .andExpect(jsonPath("$.response.winGames").value(0));
     }
-
 
 }

@@ -3,9 +3,9 @@
     <!-- Configure the database connection here -->
     <jdbc>
         <driver>org.postgresql.Driver</driver>
-        <url>jdbc:postgresql://ec2-54-247-127-6.eu-west-1.compute.amazonaws.com:5432/dfjhvf4usfa081?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</url>
-        <user>gfnmyoepyvygkd</user>
-        <password>Yg4pQ7h2bfD2RfidE5JvDeNRAu</password>
+        <url>jdbc:postgresql://ec2-54-228-195-230.eu-west-1.compute.amazonaws.com:5432/da33v75dd0rb3l?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</url>
+        <user>cxidwqqexfpodl</user>
+        <password>wBQRW64NXyZaBHwLHMaPBommn0</password>
     </jdbc>
 
     <generator>

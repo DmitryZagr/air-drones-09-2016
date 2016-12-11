@@ -10,7 +10,8 @@ public class UserProfile {
     private String  email;
     @JsonIgnore
     private String  password;
-    private int rating = 0;
+    private int countGames = 0;
+    private int winGames = 0;
 
     public UserProfile(String username, String email, String password) {
         this.username = username;
@@ -18,12 +19,20 @@ public class UserProfile {
         this.password = password;
     }
 
-    public int getRating() {
-        return rating;
+    public int getWinGames() {
+        return winGames;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setWinGames(int winGames) {
+        this.winGames = winGames;
+    }
+
+    public int getCountGames() {
+        return countGames;
+    }
+
+    public void setCountGames(int countGames) {
+        this.countGames = countGames;
     }
 
     public UserProfile() {}

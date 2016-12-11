@@ -61,19 +61,20 @@ public class AccountService implements AbstractAccountService {
         final Connection connection = DataSourceUtils.getConnection(dataSource);
 
         final DSLContext create = DSL.using(connection);
-        final Result<Record4<String, String, String, Integer> >result =
+        final Result<Record5<String, String, String, Integer, Integer> >result =
                 create.select(User.USER.EMAIL, User.USER.PASSWORD,
-                        User.USER.USERNAME, User.USER.RATING).
+                        User.USER.USERNAME, User.USER.WINGAMES, User.USER.COUNTGAMES).
                         from(User.USER)
                         .where(User.USER.EMAIL.equal(email))
                         .fetch();
         final UserProfile userProfile = new UserProfile();
 
-        for(Record4<String, String, String, Integer> r : result) {
+        for(Record5<String, String, String, Integer, Integer> r : result) {
             userProfile.setEmail(r.getValue(User.USER.EMAIL));
             userProfile.setUsername(r.getValue(User.USER.USERNAME));
             userProfile.setPassword(r.getValue(User.USER.PASSWORD));
-            userProfile.setRating(r.getValue(User.USER.RATING));
+            userProfile.setCountGames(r.getValue(User.USER.COUNTGAMES));
+            userProfile.setWinGames(r.getValue(User.USER.WINGAMES));
         }
         create.close();
 
