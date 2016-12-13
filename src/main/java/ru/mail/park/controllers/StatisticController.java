@@ -10,6 +10,8 @@ import ru.mail.park.controllers.api.common.ResultJson;
 import ru.mail.park.model.user.UserProfile;
 import ru.mail.park.service.implementation.AccountService;
 import ru.mail.park.service.implementation.SessionService;
+import ru.mail.park.service.interfaces.AbstractAccountService;
+import ru.mail.park.service.interfaces.AbstractSessionService;
 
 import javax.servlet.http.HttpSession;
 
@@ -19,12 +21,12 @@ import javax.servlet.http.HttpSession;
 @RestController
 public class StatisticController {
 
-    private final AccountService accountService;
-    private final SessionService sessionService;
+    private final AbstractAccountService accountService;
+    private final AbstractSessionService sessionService;
 
     @Autowired
-    public StatisticController(AccountService accountService,
-                               SessionService sessionService) {
+    public StatisticController(AbstractAccountService accountService,
+                               AbstractSessionService sessionService) {
         this.accountService = accountService;
         this.sessionService = sessionService;
     }

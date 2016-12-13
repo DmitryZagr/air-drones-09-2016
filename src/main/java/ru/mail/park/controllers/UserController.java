@@ -11,6 +11,7 @@ import ru.mail.park.controllers.api.PutUserRequest;
 import ru.mail.park.controllers.api.RegistrationRequest;
 import ru.mail.park.controllers.api.common.ResultJson;
 import ru.mail.park.model.user.UserProfile;
+import ru.mail.park.service.implementation.AccountService;
 import ru.mail.park.service.interfaces.AbstractAccountService;
 import ru.mail.park.service.interfaces.AbstractSessionService;
 
@@ -19,11 +20,11 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 public class UserController {
-    private final AbstractAccountService accountService;
+    private final AccountService accountService;
     private final AbstractSessionService sessionService;
 
     @Autowired
-    public UserController(AbstractAccountService accountService,
+    public UserController(AccountService accountService,
                           AbstractSessionService sessionService) {
         this.accountService = accountService;
         this.sessionService = sessionService;
