@@ -33,15 +33,15 @@ public class StatisticController {
 
     @RequestMapping(path = "/user/rating", method = RequestMethod.GET,
             produces = "application/json")
-    public ResponseEntity getWinRate(HttpSession httpSession) {
+    public ResponseEntity getWinRate(UserProfile userProfile) {
 
-        final String email = sessionService.getAuthorizedEmail(httpSession.getId());
+//        final String email = sessionService.getAuthorizedEmail(httpSession.getId());
 
-        if(email == null)
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ResultJson<>(
-                    HttpStatus.UNAUTHORIZED.value(), HttpStatus.UNAUTHORIZED).getStringResult());
+//        if(email == null)
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ResultJson<>(
+//                    HttpStatus.UNAUTHORIZED.value(), HttpStatus.UNAUTHORIZED).getStringResult());
 
-        UserProfile userProfile = accountService.getUser(email);
+        userProfile = accountService.getUser(userProfile.getEmail());
 
         Float winRate = (float)userProfile.getWinGames() / userProfile.getCountGames();
 
