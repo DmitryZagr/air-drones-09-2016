@@ -36,12 +36,6 @@ public class StatisticController {
             produces = "application/json")
     public ResponseEntity getWinRate(@RequestParam(name = "email") String email) {
 
-//        final String email = sessionService.getAuthorizedEmail(httpSession.getId());
-
-//        if(email == null)
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ResultJson<>(
-//                    HttpStatus.UNAUTHORIZED.value(), HttpStatus.UNAUTHORIZED).getStringResult());
-
         final String json;
 
         if(email == null) {
